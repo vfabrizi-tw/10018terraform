@@ -1,0 +1,67 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] data.template_file.iam_role_file" [label = "data.template_file.iam_role_file", shape = "box"]
+		"[root] data.template_file.iam_role_policy_file" [label = "data.template_file.iam_role_policy_file", shape = "box"]
+		"[root] data.template_file.iam_role_policy_var" [label = "data.template_file.iam_role_policy_var", shape = "box"]
+		"[root] data.template_file.iam_role_var" [label = "data.template_file.iam_role_var", shape = "box"]
+		"[root] data.template_file.user_data_file" [label = "data.template_file.user_data_file", shape = "box"]
+		"[root] data.template_file.user_data_var" [label = "data.template_file.user_data_var", shape = "box"]
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_file" [label = "data.template_file.iam_role_file", shape = "box"]
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_policy_file" [label = "data.template_file.iam_role_policy_file", shape = "box"]
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_policy_var" [label = "data.template_file.iam_role_policy_var", shape = "box"]
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_var" [label = "data.template_file.iam_role_var", shape = "box"]
+		"[root] module.stack_ext_ssl.data.template_file.user_data_file" [label = "data.template_file.user_data_file", shape = "box"]
+		"[root] module.stack_ext_ssl.data.template_file.user_data_var" [label = "data.template_file.user_data_var", shape = "box"]
+		"[root] module.stack_ext_ssl.provider.template" [label = "provider.template", shape = "diamond"]
+		"[root] provider.template" [label = "provider.template", shape = "diamond"]
+		"[root] data.template_file.iam_role_file (destroy)" -> "[root] data.template_file.iam_role_file" [color = "green", penwidth = "2.0"]
+		"[root] data.template_file.iam_role_file" -> "[root] module.stack_ext_ssl.data.template_file.iam_role_var (destroy)" [color = "green", penwidth = "2.0"]
+		"[root] data.template_file.iam_role_file" -> "[root] provider.template"
+		"[root] data.template_file.iam_role_policy_file (destroy)" -> "[root] data.template_file.iam_role_policy_file" [color = "red", penwidth = "2.0"]
+		"[root] data.template_file.iam_role_policy_file" -> "[root] module.stack_ext_ssl.data.template_file.iam_role_policy_var (destroy)" [color = "red", penwidth = "2.0"]
+		"[root] data.template_file.iam_role_policy_file" -> "[root] provider.template"
+		"[root] data.template_file.iam_role_policy_var (destroy)" -> "[root] data.template_file.iam_role_policy_var" [color = "red", penwidth = "2.0"]
+		"[root] data.template_file.iam_role_policy_var" -> "[root] module.stack_ext_ssl.var.iam_role_policy" [color = "red", penwidth = "2.0"]
+		"[root] data.template_file.iam_role_policy_var" -> "[root] provider.template"
+		"[root] data.template_file.iam_role_var (destroy)" -> "[root] data.template_file.iam_role_var" [color = "green", penwidth = "2.0"]
+		"[root] data.template_file.iam_role_var" -> "[root] module.stack_ext_ssl.var.iam_role" [color = "green", penwidth = "2.0"]
+		"[root] data.template_file.iam_role_var" -> "[root] provider.template"
+		"[root] data.template_file.user_data_file (destroy)" -> "[root] data.template_file.user_data_file" [color = "blue", penwidth = "2.0"]
+		"[root] data.template_file.user_data_file" -> "[root] module.stack_ext_ssl.var.user_data" [color = "blue", penwidth = "2.0"]
+		"[root] data.template_file.user_data_file" -> "[root] provider.template"
+		"[root] data.template_file.user_data_var (destroy)" -> "[root] data.template_file.user_data_var" [color = "blue", penwidth = "2.0"]
+		"[root] data.template_file.user_data_var" -> "[root] module.stack_ext_ssl.data.template_file.user_data_file (destroy)" [color = "blue", penwidth = "2.0"]
+		"[root] data.template_file.user_data_var" -> "[root] provider.template"
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_file (destroy)" -> "[root] data.template_file.iam_role_var (destroy)" [color = "green", penwidth = "2.0"]
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_file" -> "[root] data.template_file.iam_role_file"
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_file" -> "[root] data.template_file.iam_role_var"
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_file" -> "[root] module.stack_ext_ssl.provider.template"
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_policy_file (destroy)" -> "[root] data.template_file.iam_role_policy_file (destroy)" [color = "red", penwidth = "2.0"]
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_policy_file" -> "[root] data.template_file.iam_role_policy_file"
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_policy_file" -> "[root] data.template_file.iam_role_policy_var"
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_policy_file" -> "[root] module.stack_ext_ssl.provider.template"
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_policy_var (destroy)" -> "[root] data.template_file.iam_role_policy_var (destroy)" [color = "red", penwidth = "2.0"]
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_policy_var" -> "[root] data.template_file.iam_role_policy_file"
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_policy_var" -> "[root] data.template_file.iam_role_policy_var"
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_policy_var" -> "[root] module.stack_ext_ssl.provider.template"
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_var (destroy)" -> "[root] module.stack_ext_ssl.data.template_file.iam_role_file (destroy)" [color = "green", penwidth = "2.0"]
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_var" -> "[root] data.template_file.iam_role_file"
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_var" -> "[root] data.template_file.iam_role_var"
+		"[root] module.stack_ext_ssl.data.template_file.iam_role_var" -> "[root] module.stack_ext_ssl.provider.template"
+		"[root] module.stack_ext_ssl.data.template_file.user_data_file (destroy)" -> "[root] data.template_file.user_data_file (destroy)" [color = "blue", penwidth = "2.0"]
+		"[root] module.stack_ext_ssl.data.template_file.user_data_file" -> "[root] data.template_file.user_data_file"
+		"[root] module.stack_ext_ssl.data.template_file.user_data_file" -> "[root] data.template_file.user_data_var"
+		"[root] module.stack_ext_ssl.data.template_file.user_data_file" -> "[root] module.stack_ext_ssl.provider.template"
+		"[root] module.stack_ext_ssl.data.template_file.user_data_var (destroy)" -> "[root] data.template_file.user_data_var (destroy)" [color = "blue", penwidth = "2.0"]
+		"[root] module.stack_ext_ssl.data.template_file.user_data_var" -> "[root] data.template_file.user_data_file"
+		"[root] module.stack_ext_ssl.data.template_file.user_data_var" -> "[root] data.template_file.user_data_var"
+		"[root] module.stack_ext_ssl.data.template_file.user_data_var" -> "[root] module.stack_ext_ssl.provider.template"
+		"[root] module.stack_ext_ssl.provider.template" -> "[root] provider.template"
+		"[root] module.stack_ext_ssl.var.iam_role" -> "[root] data.template_file.iam_role_file (destroy)" [color = "green", penwidth = "2.0"]
+		"[root] module.stack_ext_ssl.var.iam_role_policy" -> "[root] module.stack_ext_ssl.data.template_file.iam_role_policy_file (destroy)" [color = "red", penwidth = "2.0"]
+		"[root] module.stack_ext_ssl.var.user_data" -> "[root] module.stack_ext_ssl.data.template_file.user_data_var (destroy)" [color = "blue", penwidth = "2.0"]
+	}
+}
+
